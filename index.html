@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockfall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-card" aria-label="Blockfall-spel">
+        <canvas id="game" width="300" height="600" aria-label="Spelplan"></canvas>
+
+        <aside class="side-panel">
+          <div class="title">
+            <span>BLOCK</span>
+            <strong>FALL</strong>
+          </div>
+
+          <div class="stat">
+            <span>POÄNG</span>
+            <strong id="score">0</strong>
+          </div>
+
+          <div class="stat">
+            <span>LINJER</span>
+            <strong id="lines">0</strong>
+          </div>
+
+          <div class="stat">
+            <span>NIVÅ</span>
+            <strong id="level">1</strong>
+          </div>
+
+          <div class="next-box">
+            <span>NÄSTA</span>
+            <canvas id="next" width="120" height="120" aria-label="Nästa block"></canvas>
+          </div>
+
+          <button id="start-button" type="button">STARTA SPEL</button>
+          <button id="pause-button" type="button" aria-pressed="false" disabled>PAUSA (P)</button>
+
+          <div class="controls">
+            <span>CONTROLS</span>
+            <div class="key-grid">
+              <kbd></kbd>
+              <kbd data-key="W">W</kbd>
+              <kbd></kbd>
+              <kbd data-key="A">A</kbd>
+              <kbd data-key="S">S</kbd>
+              <kbd data-key="D">D</kbd>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="game-over" class="game-over" hidden>
+      <div class="game-over-card">
+        <h1>GAME OVER</h1>
+        <p>Poäng: <strong id="final-score">0</strong></p>
+        <button id="restart-button" type="button">SPELA IGEN</button>
+      </div>
+    </div>
+
+    <div id="pause-overlay" class="game-over" hidden>
+      <div class="game-over-card">
+        <h1>PAUSAT</h1>
+        <p>Tryck P eller Escape för att fortsätta</p>
+        <button id="resume-button" type="button">FORTSÄTT</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
